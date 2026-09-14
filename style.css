@@ -1,0 +1,128 @@
+.navbar {
+  background-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 60px;
+  border-radius: 16px;
+  padding: 0.5rem;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  width: auto;
+}
+
+.offcanvas {
+    height: 100vh;
+}
+.offcanvas-body {
+    padding: 2rem;
+}
+.login-button{
+background-color: #000;
+color: #fff;
+font-size: 14px;
+padding: 8px 20px;
+border-radius: 50px;
+text-decoration: none;
+transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #333;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  font-size: 1.25rem;
+}
+
+.navbar-toggler:focus .btn-close:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.nav-link {
+  color: #000;
+  font-size: 14px;
+  position: relative;
+}
+
+.nav-link:hover .nav-link.active {
+  color: #7b7373;
+}
+
+@media (min-width: 991px) {
+  .nav-link::before{
+    content: '';
+    position: absolute; 
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: #000; /*promena boje linije ispod linka*/
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+    }
+}
+
+.hero-section {
+  width: 100%;
+  padding-top: 455px;
+  padding-bottom: 0px;
+}
+
+.hero-card {
+  margin-top: 70px;
+  height: 58vh;
+  min-height: 260px;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.35); /* Zatamnjenje pozadine radi boljeg kontrasta teksta */
+}
+
+.tracking-wider {
+  letter-spacing: 3px;
+}
+
+.tracking-spaced {
+  letter-spacing: 2px;
+}
+
+/* --- KRUŽNE KATEGORIJE --- */
+.circle-icon {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #eaeaea;
+  transition: transform 0.3s ease;
+}
+
+.circle-icon:hover {
+  transform: scale(1.08);
+}
+
+/* --- PRODUCT CARD (NEW DROP) --- */
+.product-card {
+  height: 420px;
+}
+
+.product-img {
+  height: 100%;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
