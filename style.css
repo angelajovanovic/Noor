@@ -126,3 +126,28 @@ transition: background-color 0.3s;
 .product-info {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 }
+
+/* SHOP KARTICE HOVER EFEKAT */
+.product-img-box img {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-img-box img {
+  transform: scale(1.03); /* Blagi zoom slike */
+}
+
+.quick-buy-btn {
+  opacity: 0;
+  transition: all 0.3s ease;
+  transform: translate(-50%, 10px) !important;
+}
+
+.product-card:hover .quick-buy-btn {
+  opacity: 1;
+  transform: translate(-50%, 0) !important; /* Dugme se podigne gore pri preletu miša */
+}
+
+.product-img-box {
+  min-height: 350px;
+  background-color: #f8f9fa;
+}

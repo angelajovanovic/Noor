@@ -48,5 +48,151 @@
   </div>
 </nav>
     <!-- Navbar End -->
+
+    <!-- SHOP NASLOV -->
+  <header class="py-5 bg-light text-center mb-5 mt-5 pt-4">
+    <h1 class="h2 fw-bold text-uppercase">Kolekcija</h1>
+    <p class="text-muted small mb-0">Istražite sve komade brenda NOOR</p>
+  </header>
+
+  <!-- GLAVNI SADRŽAJ: FILTERI + PROIZVODI -->
+  <main class="container mb-5">
+    <div class="row g-4">
+      
+      <!-- BOČNI FILTERI (Kolona 1) -->
+      <aside class="col-lg-3">
+        <div class="p-3 border rounded-3 bg-white">
+          <h5 class="fw-bold mb-3 fs-6 text-uppercase">Kategorije</h5>
+          <ul class="list-unstyled small mb-4">
+            <li class="mb-2"><a href="#" class="text-decoration-none text-dark d-flex justify-content-between">Sve <span>(12)</span></a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Kaputi & Jakne <span>(4)</span></a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Duksevi & Majice <span>(5)</span></a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Pantalone <span>(3)</span></a></li>
+            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Torbe & Novčanici <span>(3)</span></a></li>
+          </ul>
+
+          <h5 class="fw-bold mb-3 fs-6 text-uppercase">Veličina</h5>
+          <div class="d-flex gap-2 mb-4">
+            <button class="btn btn-outline-dark btn-sm rounded-0">XS</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0">S</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0">M</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0">L</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0">ONE SIZE</button>
+          </div>
+
+          <h5 class="fw-bold mb-3 fs-6 text-uppercase">Cena</h5>
+          <input type="range" class="form-range" min="2000" max="20000" id="priceRange">
+          <div class="d-flex justify-content-between small text-muted">
+            <span>1.790 RSD</span>
+            <span>20.000 RSD</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MREŽA PROIZVODA (Kolona 2) -->
+      <section class="col-lg-9">
+        
+        <!-- Sortiranje na vrhu -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <span class="small text-muted">Prikazano 6 od 12 proizvoda</span>
+          <select class="form-select form-select-sm w-auto border-0 bg-light">
+            <option selected>Sortiraj po: Najnovije</option>
+            <option value="1">Ceni: Od najniže</option>
+            <option value="2">Ceni: Od najviše</option>
+          </select>
+        </div>
+
+        <!-- Kartice Proizvoda -->
+        <div class="row g-4">
+          
+          <!-- Proizvod 1 -->
+          <div class="col-md-4">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="img/CHOCOLATE3.jpg" alt="Braon novčanik kožni" class="w-100 object-fit-cover" style="height: 320px;">
+                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="product-detail.html" class="text-decoration-none text-dark">Novčanik</a></h3>
+              <p class="small text-muted mb-0">1.950 RSD</p>
+            </div>
+          </div>
+
+          <!-- Proizvod 2 -->
+          <div class="col-md-4">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="img/996-1.jpg" alt="Mali novčanik u konjak boji od prevrnute kožne" class="w-100 object-fit-cover" style="height: 320px;">
+                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="product-detail1.html" class="text-decoration-none text-dark">Novčanik</a></h3>
+              <p class="small text-muted mb-0">1.790 RSD</p>
+            </div>
+          </div>
+
+          <!-- Proizvod 3 -->
+          <div class="col-md-4">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="img/BEGIE1.jpg" alt="Bez kožni novčanik" class="w-100 object-fit-cover" style="height: 320px;">
+                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="product-detail2.html" class="text-decoration-none text-dark">Novčanik</a></h3>
+              <p class="small text-muted mb-0">1.950 RSD</p>
+            </div>
+          </div>
+
+          <!-- Proizvod 4 -->
+          <div class="col-md-4">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="img/TLEATHER1.jpg" alt="Torba boje konjaka" class="w-100 object-fit-cover" style="height: 320px;">
+                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="product-detailbag1.html" class="text-decoration-none text-dark">Torba</a></h3>
+              <p class="small text-muted mb-0">4500 RSD</p>
+            </div>
+          </div>
+
+          <!-- Proizvod 5 -->
+          <div class="col-md-4">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="img/OLIVE1.jpg" alt="Maslinasta torba sa belom kožom" class="w-100 object-fit-cover" style="height: 320px;">
+                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="product-detailbag2.html" class="text-decoration-none text-dark">Torba</a></h3>
+              <p class="small text-muted mb-0">5000 RSD</p>
+            </div>
+          </div>
+
+          <!-- Proizvod 6 -->
+          <div class="col-md-4">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="img/PTSTRAW2.jpg" alt="Bez pletena torba" class="w-100 object-fit-cover" style="height: 320px;">
+                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="product-detail2.html" class="text-decoration-none text-dark">Torba</a></h3>
+              <p class="small text-muted mb-0">5500 RSD</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
 </body>
 </html>
