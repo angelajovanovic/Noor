@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOOR | Zamene, Povraćaji i Povraćaj Novca</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    /* Tečno (smooth) skrolovanje prilikom klika na link sa # */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Dodaje razmak iznad sekcije kada se odskroluje do nje, da ne bi udarila u vrh ili navbar */
+    .scroll-section {
+      scroll-margin-top: 90px;
+    }
+  </style>
+</head>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-auto" href="#">NOOR</a>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">LOGO</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Zatvori meni"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="shop.html" aria-label="Pregledajte vašu korpu">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="about.html" aria-label="Saznajte više o NOOR butiku">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="contact.html" aria-label="Kontaktirajte NOOR tim">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" href="blog.html" aria-label="Pročitajte naše blog postove">Blog</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+    <a href="#" class="login-button" aria-label="Prijavite se">Login</a>
+     <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Prijavite se na profil">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+    <!-- Navbar End -->
+<br>
+<br>
+<header class="bg-light py-5 text-center mb-5">
+    <div class="container">
+      <h1 class="fw-bold text-uppercase tracking-wider">Zamene, Povraćaji i Povraćaj Novca</h1>
+      <p class="text-muted mb-0">Sve informacije o procedurama povraćaja i zamene artikala na jednom mestu</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-5">
+      
+      <!-- Sticky navigacija sa leve strane -->
+      <div class="col-lg-4">
+        <div class="sticky-top" style="top: 100px;">
+          <h5 class="fw-bold text-uppercase mb-3 tracking-wider small">Brza Navigacija</h5>
+          <div class="list-group list-group-flush rounded-3 border">
+            <a href="#kako-izvrsiti-povracaj" class="list-group-item list-group-item-action py-3 small">Kako izvršiti povraćaj</a>
+            <a href="#kako-izvrsiti-zamenu" class="list-group-item list-group-item-action py-3 small">Kako izvršiti zamenu</a>
+            <a href="#povracaj-novca" class="list-group-item list-group-item-action py-3 small">Povraćaj novca</a>
+            <a href="#poklon-kartica" class="list-group-item list-group-item-action py-3 small">Povraćaj novca za poklon kartice</a>
+            <a href="#posebni-uslovi" class="list-group-item list-group-item-action py-3 small">Posebni uslovi povraćaja</a>
+          </div>
+          
+          <div class="p-4 bg-light rounded-4 mt-4">
+            <h6 class="fw-bold mb-2">Potrebna vam je pomoć?</h6>
+            <p class="text-muted small mb-2">Naš tim vam stoji na raspolaganju za sva pitanja.</p>
+            <a href="contact.html" class="text-dark fw-semibold small text-decoration-none">Kontaktirajte nas <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- desna strana-->
+      <div class="col-lg-8">
+        
+        
+        <section id="kako-izvrsiti-povracaj" class="scroll-section mb-5 pb-4 border-bottom">
+          <h2 class="h4 fw-bold text-uppercase mb-3">1. Kako izvršiti povraćaj</h2>
+          <p class="text-muted lh-lg mb-3">
+            Ako kupljeni artikli ne odgovaraju vašim očekivanjima, imate pravo na povraćaj u roku od 14 dana od dana prijema paketa. Proizvodi moraju biti neopeglani, neoperani, sa sačuvanim originalnim etiketama i u originalnom pakovanju.
+          </p>
+
+          
+          <img src="img/bg.jpg" class="img-fluid rounded-4 my-3 w-100 object-fit-cover" style="max-height: 280px;" alt="Povraćaj">
+
+          <p class="text-muted lh-lg">
+            Postupak je jednostavan: zapakujte artikle zajedno sa popunjenim obrazocima za odustanak od ugovora i pošaljite ih putem kurirske službe na našu adresu.
+          </p>
+        </section>
+
+        
+        <section id="kako-izvrsiti-zamenu" class="scroll-section mb-5 pb-4 border-bottom">
+          <h2 class="h4 fw-bold text-uppercase mb-3">2. Kako izvršiti zamenu</h2>
+          <p class="text-muted lh-lg mb-3">
+            Zamenu artikla za drugu veličinu ili drugi model možete izvršiti kontaktiranjem naše korisničke podrške ili slanjem e-maila sa brojem vaše narudžbine.
+          </p>
+          <p class="text-muted lh-lg">
+            Nakon što primimo vaš paket i proverimo stanje artikala, poslaćemo vam novi željeni komad na vašu adresu.
+          </p>
+        </section>
+
+        
+        <section id="povracaj-novca" class="scroll-section mb-5 pb-4 border-bottom">
+          <h2 class="h4 fw-bold text-uppercase mb-3">3. Povraćaj novca</h2>
+          <p class="text-muted lh-lg mb-3">
+            Povraćaj sredstava se vrši istim putem kojim je uplaćena narudžbina (na tekući račun sa kojeg je izvršena uplata ili na karticu).
+          </p>
+          <p class="text-muted lh-lg">
+            Sredstva će biti vraćena najkasnije u roku od 7 radnih dana od trenutka kada paket stigne u naš objekat i prođe proveru kvaliteta.
+          </p>
+        </section>
+
+        
+        <section id="poklon-kartica" class="scroll-section mb-5 pb-4 border-bottom">
+          <h2 class="h4 fw-bold text-uppercase mb-3">4. Povraćaj novca za kupovinu plaćenu poklon karticom</h2>
+          <p class="text-muted lh-lg">
+            Ako ste proizvod platili poklon karticom, iznos povraćaja se vraća u vidu kreditne dopune na vašu NOOR poklon karticu koja se može iskoristiti pri narednoj kupovini.
+          </p>
+        </section>
+
+        
+        <section id="posebni-uslovi" class="scroll-section mb-5">
+          <h2 class="h4 fw-bold text-uppercase mb-3">5. Posebni uslovi povraćaja</h2>
+          <p class="text-muted lh-lg mb-3">
+            Iz higijenskih razloga, određeni artikli kao što su donji veš, čarape i kupaći kostimi ne podležu zameni i povraćaju ukoliko je zaštitna traka uklonjena ili oštećena.
+          </p>
+          <p class="text-muted lh-lg">
+            Proizvodi koji su rađeni po meri ili prilagođeni na posebni zahtev kupca takođe ne podležu pravu na odustanak od kupovine.
+          </p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
