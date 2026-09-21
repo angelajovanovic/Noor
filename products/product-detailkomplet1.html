@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOOR - Komplet trenerka</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVIGACIJA -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3" aria-label="Glavna navigacija">
+    <div class="container">
+      <a class="navbar-brand fw-bold tracking-wider" href="../About.html" aria-label="NOOR početna stranica">NOOR</a>
+
+      <div class="collapse navbar-collapse justify-content-center" id="mainNavigation">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html" aria-label="Početna stranica">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" href="../shop.html" aria-current="page" aria-label="Prodavnica">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html" aria-label="O NOOR brendu">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact.html" aria-label="Kontaktirajte NOOR">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../blog.html" aria-label="NOOR blog">Blog</a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="../login.html" class="btn btn-dark btn-sm rounded-pill px-4" aria-label="Prijavite se na svoj nalog">
+        Login
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavigation"
+        aria-controls="mainNavigation"
+        aria-expanded="false"
+        aria-label="Otvori glavni meni">
+        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- STRANICA PROIZVODA -->
+  <main class="container my-5 pt-4">
+    
+    <!-- Breadcrumb navigacija -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+        <li class="breadcrumb-item"><a href="shop.html" class="text-decoration-none text-muted">Shop</a></li>
+        <li class="breadcrumb-item active text-dark" aria-current="page">Komplet trenerka - Siva</li>
+      </ol>
+    </nav>
+
+    <div class="row g-5">
+      
+      <!-- LEVA KOLONA: GALERIJA SLIKA -->
+      <div class="col-lg-7">
+        <!-- Glavna slika -->
+        <div class="main-img-box mb-3 rounded-3 overflow-hidden bg-light">
+          <img id="mainProductImg" src="../img/sivatrenerka.avif" alt="Komplet trnerka u sivoj boji. Oversize kroja sa kapuljacom." class="w-100 object-fit-cover" style="height: 920px;">
+        </div>
+       
+       <div class="row g-2" aria-label="Galerija fotografija proizvoda">
+          <div class="col-3">
+            <button
+              type="button"
+              class="btn p-0 border-0"
+              onclick="changeImage(this.querySelector('img').src)"
+              aria-label="Prikaži prvu fotografiju sive komplet trenerke.">
+              <img
+                src="../img/sivatrenerka.avif"
+                class="img-thumbnail thumb-img active"
+                alt="Komplet trenerka sive boje. Oversized kroja sa kapuljacom.">
+            </button>
+          </div>
+          <div class="col-3">
+            <button
+              type="button"
+              class="btn p-0 border-0"
+              onclick="changeImage(this.querySelector('img').src)"
+              aria-label="Prikaži drugu fotografiju crvene haljine">
+              <img
+                src="../img/sivatrenerka1.avif"
+                class="img-thumbnail thumb-img"
+                alt="Komplet trenerka sive boje. Oversized kroja sa kapuljacom.">
+            </button>
+          </div>
+        </div> <!-- Kraj row g-2 -->
+        
+      
+    </div>
+      <!-- DESNA KOLONA: DETALJI I INTERAKCIJA -->
+      <div class="col-lg-5">
+        <span class="text-uppercase text-muted small tracking-wider">Kolekcija 2026</span>
+        <h1 class="h2 fw-bold mt-1 mb-2">Komplet trenerka - Siva</h1>
+        <p class="h4 fw-semibold text-dark mb-4">6000 RSD</p>
+        
+        <hr class="my-4">
+
+        <!-- ODABIR VELIČINE -->
+        <div class="mb-4">
+          <label class="fw-semibold d-block mb-2 small text-uppercase">Veličina:</label>
+          <div class="d-flex gap-2">
+            <input type="radio" class="btn-check" name="size" id="sizeXS" autocomplete="off">
+            <label class="btn btn-outline-dark size-btn" for="sizeXS">XS</label>
+            <label class="btn btn-outline-dark size-btn" for="sizeS">S</label>
+            <label class="btn btn-outline-dark size-btn" for="sizeM">M</label>
+            <label class="btn btn-outline-dark size-btn" for="sizeL">L</label>
+          </div>
+        </div>
+
+        <!-- ODABIR KOLIČINE I DUGME ZA KORPU -->
+        <div class="mb-4">
+          <label class="fw-semibold d-block mb-2 small text-uppercase">Količina:</label>
+          <div class="d-flex gap-3 align-items-center">
+            
+            <!-- Kontrola količine (+ / -) -->
+            <div class="input-group quantity-box" style="width: 130px;">
+              <button class="btn btn-outline-secondary" type="button" onclick="decreaseQty()">-</button>
+              <input type="text" id="quantityInput" class="form-center form-control text-center border-secondary" value="1" readonly>
+              <button class="btn btn-outline-secondary" type="button" onclick="increaseQty()">+</button>
+            </div>
+
+            <!-- Add to Cart dugme -->
+            <button
+              class="btn btn-dark btn-lg flex-grow-1 rounded-pill fs-6 py-3"
+              type="button"
+              aria-label="Dodaj torbu u korpu">
+              <i class="bi bi-bag-plus me-2" aria-hidden="true"></i>
+              Dodaj u korpu
+            </button>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- AKORDEON / INFORMACIJE O PROIZVODU -->
+        <div class="accordion accordion-flush" id="productSpecs">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-uppercase small"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#desc"
+                aria-controls="desc"
+                aria-expanded="false"
+                aria-label="Prikaži opis proizvoda">
+                Opis proizvoda
+              </button>
+            </h2>
+            <div id="desc" class="accordion-collapse collapse show" data-bs-parent="#productSpecs">
+              <div class="accordion-body text-muted small">
+                Dvodelni sivi komplet od pamuka premijum kvaliteta. Sačinjen od dukserice komfornog kroja sa učkurom za prilagođavanje siluete i donjeg dela sa dubokim strukom. Mekana tkanina i moderan dizajn čine ga nepogrešivim izborom za svaki dan.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-uppercase small"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#materials"
+                aria-controls="materials"
+                aria-expanded="false"
+                aria-label="Prikaži sastav i način održavanja proizvoda">
+                Sastav i održavanje
+              </button>
+            </h2>
+            <div id="materials" class="accordion-collapse collapse" data-bs-parent="#productSpecs">
+              <div class="accordion-body text-muted small">
+                Boja: Siva; <br>
+                Sastav: 80% pamuk, 20% elastin; <br>
+                Održavanje: Masinsko pranje; <br>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- JAVASCRIPT ZA PROMENU SLIKA I KOLIČINE -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Promena glavne slike klikom na thumbnail
+    function changeImage(src) {
+      document.getElementById('mainProductImg').src = src;
+    }
+
+    // Povećanje/Smanjenje količine
+    function increaseQty() {
+      let input = document.getElementById('quantityInput');
+      input.value = parseInt(input.value) + 1;
+    }
+
+    function decreaseQty() {
+      let input = document.getElementById('quantityInput');
+      if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+      }
+    }
+  </script>
+</body>
+</html>

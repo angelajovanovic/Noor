@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOOR - Minimalistički Sako</title>
+  <title>NOOR - Komplet trenerka</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -13,29 +13,29 @@
   <!-- NAVIGACIJA -->
   <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top py-3" aria-label="Glavna navigacija">
     <div class="container">
-      <a class="navbar-brand fw-bold tracking-wider" href="index.html" aria-label="NOOR početna stranica">NOOR</a>
+      <a class="navbar-brand fw-bold tracking-wider" href="../About.html" aria-label="NOOR početna stranica">NOOR</a>
 
       <div class="collapse navbar-collapse justify-content-center" id="mainNavigation">
         <ul class="navbar-nav gap-3">
           <li class="nav-item">
-            <a class="nav-link" href="index.html" aria-label="Početna stranica">Home</a>
+            <a class="nav-link" href="../index.html" aria-label="Početna stranica">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active fw-bold" href="shop.html" aria-current="page" aria-label="Prodavnica">Shop</a>
+            <a class="nav-link active fw-bold" href="../shop.html" aria-current="page" aria-label="Prodavnica">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html" aria-label="O NOOR brendu">About</a>
+            <a class="nav-link" href="../about.html" aria-label="O NOOR brendu">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html" aria-label="Kontaktirajte NOOR">Contact</a>
+            <a class="nav-link" href="../contact.html" aria-label="Kontaktirajte NOOR">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog.html" aria-label="NOOR blog">Blog</a>
+            <a class="nav-link" href="../blog.html" aria-label="NOOR blog">Blog</a>
           </li>
         </ul>
       </div>
 
-      <a href="login.html" class="btn btn-dark btn-sm rounded-pill px-4" aria-label="Prijavite se na svoj nalog">
+      <a href="../login.html" class="btn btn-dark btn-sm rounded-pill px-4" aria-label="Prijavite se na svoj nalog">
         Login
       </a>
 
@@ -60,7 +60,7 @@
       <ol class="breadcrumb small">
         <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
         <li class="breadcrumb-item"><a href="shop.html" class="text-decoration-none text-muted">Shop</a></li>
-        <li class="breadcrumb-item active text-dark" aria-current="page">Torba</li>
+        <li class="breadcrumb-item active text-dark" aria-current="page">Crvena haljina</li>
       </ol>
     </nav>
 
@@ -70,57 +70,43 @@
       <div class="col-lg-7">
         <!-- Glavna slika -->
         <div class="main-img-box mb-3 rounded-3 overflow-hidden bg-light">
-          <img id="mainProductImg" src="img/OLIVE1.jpg" alt="NOOR torba u maslinastoj boji sa dvostrukim ručkama. Na prednjoj strani deo od bez materijala. Zatvaranje patentnim zatvaracem. Unutrasnji dzepovi." class="w-100 object-fit-cover" style="height: 520px;">
+          <img id="mainProductImg" src="../img/rozatrenerka1.avif" alt="Komplet trenerka roze boje. Oversized kroja sa kapuljacom." class="w-100 object-fit-cover" style="height: 920px;">
         </div>
         
-        <!-- Male sličice (Thumbnails) -->
+         <!-- Male sličice (Thumbnails) -->
         <div class="row g-2" aria-label="Galerija fotografija proizvoda">
           <div class="col-3">
             <button
               type="button"
               class="btn p-0 border-0"
               onclick="changeImage(this.querySelector('img').src)"
-              aria-label="Prikaži prvu fotografiju NOOR torbe">
+              aria-label="Prikaži prvu fotografiju roze komplet trenerke.">
               <img
-                src="img/OLIVE2.jpg"
+                src="../img/rozatrenerka1.avif"
                 class="img-thumbnail thumb-img active"
-                alt="Maslinasta torba sa dodatnim kaišem preko ramena. Na prednjoj strani deo od bez materijala. Zatvaranje patentnim zatvaracem.">
+                alt="Komplet trenerka roze boje. Oversized kroja sa kapuljacom.">
             </button>
           </div>
-
           <div class="col-3">
             <button
               type="button"
               class="btn p-0 border-0"
               onclick="changeImage(this.querySelector('img').src)"
-              aria-label="Prikaži drugu fotografiju NOOR torbe">
+              aria-label="Prikaži drugu fotografiju crvene haljine">
               <img
-                src="img/OLIVE3.jpg"
+                src="../img/rozatrenerka.avif"
                 class="img-thumbnail thumb-img"
                 alt="Unutrašnjost torbe sa patentnim zatvaračem. Unutar torbe se nalazi pregrada i dzep.">
             </button>
           </div>
-
-          <div class="col-3">
-            <button
-              type="button"
-              class="btn p-0 border-0"
-              onclick="changeImage(this.querySelector('img').src)"
-              aria-label="Prikaži treću fotografiju NOOR torbe">
-              <img
-                src="img/OLIVE1.jpg"
-                class="img-thumbnail thumb-img"
-                alt="NOOR torba u maslinastoj boji sa dvostrukim ručkama. Na prednjoj strani deo od bez materijala. Zatvaranje patentnim zatvaracem. Unutrasnji dzepovi."">
-            </button>
-          </div>
-        </div>
-
+        </div> <!-- Kraj row g-2 -->
       </div>
+      
       <!-- DESNA KOLONA: DETALJI I INTERAKCIJA -->
       <div class="col-lg-5">
         <span class="text-uppercase text-muted small tracking-wider">Kolekcija 2026</span>
-        <h1 class="h2 fw-bold mt-1 mb-2">Torba</h1>
-        <p class="h4 fw-semibold text-dark mb-4">5000 RSD</p>
+        <h1 class="h2 fw-bold mt-1 mb-2">Komplet trenerka - Rоza</h1>
+        <p class="h4 fw-semibold text-dark mb-4">6000 RSD</p>
         
         <hr class="my-4">
 
@@ -129,8 +115,10 @@
           <label class="fw-semibold d-block mb-2 small text-uppercase">Veličina:</label>
           <div class="d-flex gap-2">
             <input type="radio" class="btn-check" name="size" id="sizeXS" autocomplete="off">
-            <label class="btn btn-outline-dark size-btn" for="sizeXS">ONE SIZE</label>
-
+            <label class="btn btn-outline-dark size-btn" for="sizeXS">XS</label>
+            <label class="btn btn-outline-dark size-btn" for="sizeS">S</label>
+            <label class="btn btn-outline-dark size-btn" for="sizeM">M</label>
+            <label class="btn btn-outline-dark size-btn" for="sizeL">L</label>
           </div>
         </div>
 
@@ -196,10 +184,9 @@
             </h2>
             <div id="materials" class="accordion-collapse collapse" data-bs-parent="#productSpecs">
               <div class="accordion-body text-muted small">
-                Težina 0,645 kg; <br>
-                Dimenzije 33×24×13 cm; <br>
-                Boja Maslinasta; <br>
-                Sastav 30% PL, 70% PU
+                Boja: Roza; <br>
+                Sastav: 80% svilena, 20% poliester; <br>
+                Održavanje: Hemijsko čišćenje obavezno; <br>
               </div>
             </div>
           </div>
