@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOOR - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
 </head>
 <body>
         <!-- Navbar --> 
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand me-auto" href="#">NOOR</a>
+    <a class="navbar-brand me-auto" href="index.html">NOOR</a>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">LOGO</h5>
@@ -36,11 +41,45 @@
         </ul>
       </div>
     </div>
-    <a href="#" class="login-button" aria-label="Prijavite se">Login</a>
+    <a href="cart.html" class="btn btn-link text-dark me-2">
+      <i class="bi bi-bag fs-5"></i>
+    </a>
+    <a href="login.html" class="login-button" aria-label="Prijavite se">Login</a>
      <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Prijavite se na profil">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
-</nav
+</nav>
+        <!--End Navbar-->
+<main class="conteiner my-5 py-5">
+    <div class="row justify=conteiner-center">
+        <div class="col-md-5">
+            <div class="card border-0 shadow-sm p-4 rounded-4">
+                <h2 class="text-center fw-bold mb-4">Prijava na nalog</h2>
+                <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label small text-uppercase fw-semibold">E-mail adresa</label>
+                    <input type="email" class="form-control rounded-3" id="email" placeholder="Ovde unesite vas email!" required>
+                </div>
+            <div class="mb-3">
+              <label for="password" class="form-label small text-uppercase fw-semibold">Lozinka</label>
+              <input type="password" class="form-control rounded-3" id="password" placeholder="Unesite lozinku!" required>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="remember">
+                <label class="form-check-label small" for="remember">Zapamti me</label>
+              </div>
+              <a href="#" class="small text-muted text-decoration-underline">Zaboravili ste lozinku?</a>
+            </div>
+            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 fw-semibold">Prijavi se</button>
+          </form>
+          <hr class="my-4">
+          <p class="text-center small mb-0">Nemate nalog? <a href="#" class="fw-bold text-dark text-decoration-none">Registrujte se</a></p>
+
+            </div>
+        </div>
+    </div>
+</main>
 </body>
 </html>
