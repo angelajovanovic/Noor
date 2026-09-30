@@ -25,7 +25,7 @@
             <a class="nav-link mx-lg-2" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" href="shop.html" aria-label="Pregledajte vašu korpu">Shop</a>
+            <a class="nav-link mx-lg-2" href="shop.html" aria-label="Otvori Shop stranu">Shop</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="about.html" aria-label="Saznajte više o NOOR butiku">About</a>
@@ -56,88 +56,33 @@
     <main class="container pt-5 mt-5 mb-5">
     <h1 class="h2 fw-bold text-uppercase tracking-wider mb-4">Vaša Korpa</h1>
 
-    <div class="row g-4">
-      <!-- LEVA STRANA: LISTA ARTIKALA -->
+        <div class="row g-4">
+      <!-- Levo: artikli-->
       <div class="col-lg-8">
-        
-        <!-- Artikal 1 -->
-        <div class="card border-0 shadow-sm p-3 rounded-4 mb-3">
-          <div class="row align-items-center g-3">
-            <div class="col-3 col-sm-2">
-              <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=300" alt="Zimska jakna NOOR" class="img-fluid rounded-3 object-fit-cover" style="height: 80px; width: 100%;">
-            </div>
-            <div class="col-9 col-sm-4">
-              <h5 class="fw-bold fs-6 mb-1">Zimska Jakna NOOR</h5>
-              <p class="text-muted small mb-0">Veličina: M | Boja: Crna</p>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group input-group-sm rounded-pill border overflow-hidden" style="max-width: 110px;">
-                <button class="btn btn-light border-0 fw-bold px-2" type="button">-</button>
-                <input type="text" class="form-control text-center border-0 bg-transparent fw-semibold p-0" value="1" readonly>
-                <button class="btn btn-light border-0 fw-bold px-2" type="button">+</button>
-              </div>
-            </div>
-            <div class="col-4 col-sm-2 text-end fw-bold">
-              8.900 RSD
-            </div>
-            <div class="col-2 col-sm-1 text-end">
-              <button class="btn btn-link text-danger p-0 border-0" aria-label="Ukloni artikal">
-                <i class="bi bi-trash fs-5"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Artikal 2 -->
-        <div class="card border-0 shadow-sm p-3 rounded-4 mb-3">
-          <div class="row align-items-center g-3">
-            <div class="col-3 col-sm-2">
-              <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=300" alt="Kožna Torba NOOR" class="img-fluid rounded-3 object-fit-cover" style="height: 80px; width: 100%;">
-            </div>
-            <div class="col-9 col-sm-4">
-              <h5 class="fw-bold fs-6 mb-1">Pletena Torba NOOR</h5>
-              <p class="text-muted small mb-0">Boja: Bež</p>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group input-group-sm rounded-pill border overflow-hidden" style="max-width: 110px;">
-                <button class="btn btn-light border-0 fw-bold px-2" type="button">-</button>
-                <input type="text" class="form-control text-center border-0 bg-transparent fw-semibold p-0" value="1" readonly>
-                <button class="btn btn-light border-0 fw-bold px-2" type="button">+</button>
-              </div>
-            </div>
-            <div class="col-4 col-sm-2 text-end fw-bold">
-              4.500 RSD
-            </div>
-            <div class="col-2 col-sm-1 text-end">
-              <button class="btn btn-link text-danger p-0 border-0" aria-label="Ukloni artikal">
-                <i class="bi bi-trash fs-5"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
+        <div id="cartStatus" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+        <div id="cartItemsContainer"></div>
       </div>
 
-      <!-- DESNA STRANA: SAŽETAK I PLAĆANJE -->
+      <!-- Desno: sazetak i placanje -->
       <div class="col-lg-4">
         <div class="card border-0 shadow-sm p-4 rounded-4 bg-light">
           <h5 class="fw-bold text-uppercase mb-4">Pregled porudžbine</h5>
           
           <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted">Proizvodi (2):</span>
-            <span class="fw-semibold">13.400 RSD</span>
+            <span class="text-muted">Proizvodi: </span>
+            <span id="subtotalPrice" class="fw-semibold">0 RSD</span>
           </div>
           
           <div class="d-flex justify-content-between mb-3">
-            <span class="text-muted">Dostava:</span>
-            <span class="text-success fw-semibold">Besplatna za porudžbine preko 12.000 RSD </span>
+            <span class="text-muted">Dostava: </span>
+            <span class="text-success fw-semibold"> Besplatna za porudžbine preko 12.000 RSD </span>
           </div>
 
           <hr class="my-3">
 
           <div class="d-flex justify-content-between mb-4 fs-5 fw-bold">
-            <span>Ukupno:</span>
-            <span>13.400 RSD</span>
+            <span>Ukupno: </span>
+            <span id="totalPrice">0 RSD</span>
           </div>
 
           <button class="btn btn-dark w-100 rounded-pill py-3 fw-semibold text-uppercase tracking-wider">
@@ -151,6 +96,8 @@
       </div>
     </div>
   </main>
+
+  <script src="../script.js"></script>
     
 </body>
 </html>
