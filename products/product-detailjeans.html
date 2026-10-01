@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOOR - Rоza svilena haljina</title>
+  <title>NOOR - Farmerke</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -30,7 +30,6 @@
     }
   </script>
   <script src="../script.js"></script>
-</head>
 <body>
 
   <!-- NAVIGACIJA -->
@@ -58,7 +57,6 @@
         </ul>
       </div>
 
-      
       <a href="../cart.html" class="btn btn-link text-dark me-2">
       <i class="bi bi-bag fs-5"></i>
       </a>
@@ -68,11 +66,7 @@
       </a>
 
       <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavigation"
-        aria-controls="mainNavigation"
+        class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation"
         aria-expanded="false"
         aria-label="Otvori glavni meni">
         <span class="navbar-toggler-icon" aria-hidden="true"></span>
@@ -88,7 +82,7 @@
       <ol class="breadcrumb small">
         <li class="breadcrumb-item"><a href="../index.html" class="text-decoration-none text-muted">Home</a></li>
         <li class="breadcrumb-item"><a href="../shop.html" class="text-decoration-none text-muted">Shop</a></li>
-        <li class="breadcrumb-item active text-dark" aria-current="page">Rоza svilena haljina</li>
+        <li class="breadcrumb-item active text-dark" aria-current="page">Košulja</li>
       </ol>
     </nav>
 
@@ -98,7 +92,7 @@
       <div class="col-lg-7">
         <!-- Glavna slika -->
         <div class="main-img-box mb-3 rounded-3 overflow-hidden bg-light">
-          <img id="mainProductImg" src="../img/rozahaljina.avif" alt="Rоza svilena haljina sa jednim dugmetom koja se vezuje oko struka" class="w-100 object-fit-cover" style="height: 820px;">
+          <img id="mainProductImg" src="../img/jeans1.jpg" alt="Jeans klasicnog kroja u plavoj boji" class="w-100 object-fit-cover" style="height: 720px;">
         </div>
         
         <!-- Male sličice (Thumbnails) -->
@@ -108,22 +102,48 @@
               type="button"
               class="btn p-0 border-0"
               onclick="changeImage(this.querySelector('img').src)"
-              aria-label="Prikaži prvu fotografiju roze svilene haljine">
+              aria-label="Prikaži prvu fotografiju jeansa klasicnog kroja u plavoj boji. Na fotografiji se vidi prednja strana i deo bočnih šavova. Jeans nema vidljive oznake brenda.">
               <img
-                src="../img/rozahaljina.avif"
+                src="../img/jeans1.jpg"
                 class="img-thumbnail thumb-img active"
-                alt="Rоza svilena haljina sa jednim dugmetom koja se vezuje oko struka">
+                alt="Jeans klasicnog kroja u plavoj boji.">
+            </button>
+          </div>
+
+          <div class="col-3">
+            <button
+              type="button"
+              class="btn p-0 border-0"
+              onclick="changeImage(this.querySelector('img').src)"
+              aria-label="Prikaži drugu fotografiju jeansa klasicnog kroja u plavoj boji. Na fotografiji se vidi zadnji deo sa džepovima.">
+              <img
+                src="../img/jeans1-2.jpg"
+                class="img-thumbnail thumb-img"
+                alt="Jeans klasicnog kroja u plavoj boji, zadnji deo sa džepovima.">
+            </button>
+          </div>
+
+          <div class="col-3">
+            <button
+              type="button"
+              class="btn p-0 border-0"
+              onclick="changeImage(this.querySelector('img').src)"
+              aria-label="Prikaži treću fotografiju jeansa klasicnog kroja u plavoj boji. Na fotografiji se vidi prednja strana i deo bočnih šavova.">
+              <img
+                src="../img/jeans1-3.jpg"
+                class="img-thumbnail thumb-img"
+                alt="Jeans klasicnog kroja u plavoj boji, prikaz dzepova i boje konca.">
             </button>
           </div>
 
         </div>
+
       </div>
-      
       <!-- DESNA KOLONA: DETALJI I INTERAKCIJA -->
       <div class="col-lg-5">
         <span class="text-uppercase text-muted small tracking-wider">Kolekcija 2026</span>
-        <h1 class="h2 fw-bold mt-1 mb-2">Rоza svilena haljina</h1>
-        <p class="h4 fw-semibold text-dark mb-4">4000 RSD</p>
+        <h1 class="h2 fw-bold mt-1 mb-2">Farmerke</h1>
+        <p class="h4 fw-semibold text-dark mb-4">4500 RSD</p>
         
         <hr class="my-4">
 
@@ -155,7 +175,7 @@
             <button
               class="btn btn-dark btn-lg flex-grow-1 rounded-pill fs-6 py-3"
               type="button"
-              aria-label="Dodaj torbu u korpu" onclick="addToCart()" >
+              aria-label="Dodaj torbu u korpu" onclick="addToCart()"  >
               <i class="bi bi-bag-plus me-2" aria-hidden="true"></i>
               Dodaj u korpu
             </button>
@@ -181,7 +201,7 @@
             </h2>
             <div id="desc" class="accordion-collapse collapse show" data-bs-parent="#productSpecs">
               <div class="accordion-body text-muted small">
-                Satenska haljina u rozoj nijansi, kreirana za sofisticiran i moderan izgled. Kroj sa kopčanjem na jedno dugme i pojasom za vezivanje u struku pruža maksimalnu udobnost i prilagodljivost. Lagani saten sa svilenkastim odsjajem čini je nepogrešivim komadom za svaku posebnu priliku.
+                Ove farmerke širokih nogavica i visokog struka kreirane su da izduže vašu siluetu i pruže vam neprikosnovenu eleganciju u svakodnevnim kombinacijama. Izrađene od kvalitetnog teksasa u klasičnoj plavoj nijansi sa blagim efekatom pranja, predstavljaju nezaobilazan komad svake capsule garderobe.
               </div>
             </div>
           </div>
@@ -201,15 +221,15 @@
             </h2>
             <div id="materials" class="accordion-collapse collapse" data-bs-parent="#productSpecs">
               <div class="accordion-body text-muted small">
-                Boja: Roza; <br>
-                Sastav: 80% svilena, 20% poliester; <br>
-                Održavanje: Hemijsko čišćenje obavezno; <br>
+                Boja: Srednje plava sa diskretnim fade efektom na butinama; <br>
+                Sastav: 98% pamuk, 2% elastin (blago rastegljive za maksimalnu udobnost); <br>
+                Održavanje: Mašinsko pranje na 30°C (izvrnuto pre pranja); <br>
               </div>
             </div>
           </div>
         </div>
 
-      </div>
+      
     </div>
   </main>
 
