@@ -12,7 +12,10 @@
     <script src="../script.js"></script>
 </head>
 <body>
-           <!-- Navbar --> 
+  <a href="#main-content" class="visually-hidden-focusable">Preskoči na sadržaj</a>
+  <div id="liveRegion" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Navbar --> 
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand me-auto" href="../index.html">NOOR</a>
@@ -60,35 +63,85 @@
   </header>
 
   <!-- GLAVNI SADRŽAJ: FILTERI + PROIZVODI -->
-  <main class="container mb-5">
+  <main id="main-content" class="container mb-5">
     <div class="row g-4">
       
       <!-- BOČNI FILTERI (Kolona 1) -->
       <aside class="col-lg-3">
         <div class="p-3 border rounded-3 bg-white">
+
           <h5 class="fw-bold mb-3 fs-6 text-uppercase">Kategorije</h5>
           <ul class="list-unstyled small mb-4">
-            <li class="mb-2"><a href="#" class="text-decoration-none text-dark d-flex justify-content-between">Sve <span>(12)</span></a></li>
-            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Kaputi & Jakne <span>(4)</span></a></li>
-            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Duksevi & Majice <span>(5)</span></a></li>
-            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Pantalone <span>(3)</span></a></li>
-            <li class="mb-2"><a href="#" class="text-decoration-none text-muted d-flex justify-content-between">Torbe & Novčanici <span>(3)</span></a></li>
+            <li class="mb-2">
+              <a href="#"
+                 class="category-link text-decoration-none text-dark fw-bold active d-flex justify-content-between"
+                 data-filter="all"
+                 aria-label="Prikaži sve proizvode"
+                 aria-current="page">
+                Sve <span class="cat-count">(0)</span>
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="#"
+                 class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                 data-filter="bags"
+                 aria-label="Prikaži torbe i novčanike">
+                Torbe & Novčanici <span class="cat-count">(0)</span>
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="#"
+                 class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                 data-filter="dresses"
+                 aria-label="Prikaži haljine">
+                Haljine <span class="cat-count">(0)</span>
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="#"
+                 class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                 data-filter="kosulja"
+                 aria-label="Prikaži košulje">
+                Košulje <span class="cat-count">(0)</span>
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="#"
+                 class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                 data-filter="trenerke"
+                 aria-label="Prikaži trenerke">
+                Trenerke <span class="cat-count">(0)</span>
+              </a>
+            </li>
+
+            <li class="mb-2">
+              <a href="#"
+                 class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                 data-filter="farmerke"
+                 aria-label="Prikaži farmerke">
+                Farmerke <span class="cat-count">(0)</span>
+              </a>
+            </li>
           </ul>
 
           <h5 class="fw-bold mb-3 fs-6 text-uppercase">Veličina</h5>
           <div class="d-flex gap-2 mb-4">
-            <button class="btn btn-outline-dark btn-sm rounded-0">XS</button>
-            <button class="btn btn-outline-dark btn-sm rounded-0">S</button>
-            <button class="btn btn-outline-dark btn-sm rounded-0">M</button>
-            <button class="btn btn-outline-dark btn-sm rounded-0">L</button>
-            <button class="btn btn-outline-dark btn-sm rounded-0">ONE SIZE</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0 size-btn" data-size="XS" type="button" aria-label="Prikaži veličinu XS" aria-pressed="false">XS</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0 size-btn" data-size="S" type="button" aria-label="Prikaži veličinu S" aria-pressed="false">S</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0 size-btn" data-size="M" type="button" aria-label="Prikaži veličinu M" aria-pressed="false">M</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0 size-btn" data-size="L" type="button" aria-label="Prikaži veličinu L" aria-pressed="false">L</button>
+            <button class="btn btn-outline-dark btn-sm rounded-0 size-btn" data-size="ONE SIZE" type="button" aria-label="Prikaži veličinu One size" aria-pressed="false">ONE SIZE</button>
           </div>
 
           <h5 class="fw-bold mb-3 fs-6 text-uppercase">Cena</h5>
-          <input type="range" class="form-range" min="2000" max="20000" id="priceRange">
+          <input type="range" class="form-range" id="priceRange" min="1790" max="20000" step="100" value="20000" aria-label="Filtriraj proizvode po ceni">
           <div class="d-flex justify-content-between small text-muted">
             <span>1.790 RSD</span>
-            <span>20.000 RSD</span>
+            <span id="priceValue" class="fw-bold text-dark">20.000 RSD</span>
           </div>
         </div>
       </aside>
@@ -98,7 +151,7 @@
         
         <!-- Sortiranje na vrhu -->
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <span class="small text-muted">Prikazano 6 od 12 proizvoda</span>
+          <span class="small text-muted">Prikazano <span id="count-shown">0</span> od <span id="count-total">0</span> proizvoda</span>
           <select class="form-select form-select-sm w-auto border-0 bg-light">
             <option selected>Sortiraj po: Najnovije</option>
             <option value="1">Ceni: Od najniže</option>
@@ -110,11 +163,15 @@
         <div class="row g-4">
           
           
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="bags" data-size="ONE SIZE" data-price="1950">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="../img/CHOCOLATE3.jpg" alt="Braon novčanik kožni" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod novčanik u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -124,11 +181,15 @@
           </div>
 
           
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="bags" data-size="ONE SIZE" data-price="1790">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="../img/996-1.jpg" alt="Mali novčanik u konjak boji od prevrnute kožne" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod novčanik u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -138,11 +199,15 @@
           </div>
 
          
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="bags" data-size="ONE SIZE" data-price="1950">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="../img/BEGIE1.jpg" alt="Bez kožni novčanik" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod novčanik u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -152,11 +217,15 @@
           </div>
 
           
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="bags" data-size="ONE SIZE" data-price="4500">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/TLEATHER1.jpg" alt="Torba boje konjaka" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod torba u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -166,11 +235,15 @@
           </div>
 
           
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="bags" data-size="ONE SIZE" data-price="5000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/OLIVE1.jpg" alt="Maslinasta torba sa belom kožom" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod torba u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -180,11 +253,15 @@
           </div>
 
           
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="bags" data-size="ONE SIZE" data-price="5500">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/PTSTRAW2.jpg" alt="Bez pletena torba" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod torba u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -193,11 +270,15 @@
             </div>
           </div>
 
-           <div class="col-md-4">
+           <div class="col-md-4 product-item" data-category="dresses" data-size="XS,S,M,L" data-price="6000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/crvenahaljina1.avif" alt="Crvena haljina sa šest dugmića" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod crvena haljina u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -206,11 +287,15 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="dresses" data-size="XS,S,M,L" data-price="4000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/rozahaljina.avif" alt="Rоza svilena haljina koja se vezuje oko struka" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod rоza svilena haljina u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -219,11 +304,15 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="kosulja" data-size="M,L" data-price="3000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/crnakosulja.avif" alt="Klasična crna košulja regular kroja" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod crna košulja u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -232,11 +321,15 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="trenerke" data-size="XS,S,M,L" data-price="6000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/sivatrenerka.avif" alt="Komplet trenerka sive boje" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod komplet trenerka - siva u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -245,12 +338,71 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="trenerke" data-size="XS,S,M,L" data-price="6000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="img/rozatrenerka1.avif" alt="Komplet trenerka roze boje" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
-                  Dodaj u korpu
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod k                  <h5 class="fw-bold mb-3 fs-6 text-uppercase">Kategorije</h5>
+                  <ul class="list-unstyled small mb-4">
+                    <li class="mb-2">
+                      <a href="#"
+                         class="category-link text-decoration-none text-dark fw-bold active d-flex justify-content-between"
+                         data-filter="all"
+                         aria-label="Prikaži sve proizvode"
+                         aria-current="page">
+                        Sve <span class="cat-count">(0)</span>
+                      </a>
+                    </li>
+
+                    <li class="mb-2">
+                      <a href="#"
+                         class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                         data-filter="bags"
+                         aria-label="Prikaži torbe i novčanike">
+                        Torbe & Novčanici <span class="cat-count">(0)</span>
+                      </a>
+                    </li>
+
+                    <li class="mb-2">
+                      <a href="#"
+                         class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                         data-filter="dresses"
+                         aria-label="Prikaži haljine">
+                        Haljine <span class="cat-count">(0)</span>
+                      </a>
+                    </li>
+
+                    <li class="mb-2">
+                      <a href="#"
+                         class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                         data-filter="kosulja"
+                         aria-label="Prikaži košulje">
+                        Košulje <span class="cat-count">(0)</span>
+                      </a>
+                    </li>
+
+                    <li class="mb-2">
+                      <a href="#"
+                         class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                         data-filter="trenerke"
+                         aria-label="Prikaži trenerke">
+                        Trenerke <span class="cat-count">(0)</span>
+                      </a>
+                    </li>
+
+                    <li class="mb-2">
+                      <a href="#"
+                         class="category-link text-decoration-none text-muted d-flex justify-content-between"
+                         data-filter="farmerke"
+                         aria-label="Prikaži farmerke">
+                        Farmerke <span class="cat-count">(0)</span>
+                      </a>
+                    </li>
+                  </ul>
                 </button>
               </div>
               <h3 class="h6 fw-semibold mb-1"><a href="../products/product-detailkomplet2.html" class="text-decoration-none text-dark">Komplet trenerka - roze</a></h3>
@@ -258,11 +410,15 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="trenerke" data-size="XS,S,M,L" data-price="6000">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="../img/braontrenerka.avif" alt="Komplet trenerka braon boje" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod Komplet trenerka - braon u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -271,11 +427,15 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="farmerke" data-size="XS,S,M,L" data-price="4500">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="../img/jeans1.jpg" alt="Jeans klasicnog kroja u plavoj boji" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod Farmerke u korpu">
                   Dodaj u korpu
                 </button>
               </div>
@@ -284,16 +444,37 @@
             </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4 product-item" data-category="farmerke" data-size="XS,S,M,L" data-price="4500">
             <div class="product-card text-center">
               <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
                 <img src="../img/jeans2.jpg" alt="Jeans klasicnog kroja u plavoj boji" class="w-100 object-fit-cover" style="height: 320px;">
-                <button class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn" onclick="addToCart(this)">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod Farmerke u korpu">
                   Dodaj u korpu
                 </button>
               </div>
               <h3 class="h6 fw-semibold mb-1"><a href="../products/product-detailjeans1.html" class="text-decoration-none text-dark">Farmerke</a></h3>
               <p class="small text-muted mb-0">4500 RSD</p>
+            </div>
+          </div>
+
+           <div class="col-md-4 product-item" data-category="farmerke" data-size="XS,S,M,L" data-price="4500">
+            <div class="product-card text-center">
+              <div class="product-img-box position-relative overflow-hidden mb-2 bg-light rounded-3">
+                <img src="../img/jakna.jpg" alt="Jesenja crna teksas jakna sa kožnim detaljima" class="w-100 object-fit-cover" style="height: 320px;">
+                <button
+                  class="btn btn-dark btn-sm position-absolute bottom-0 start-50 translate-middle-x mb-3 rounded-pill px-3 shadow-sm quick-buy-btn"
+                  type="button"
+                  onclick="addToCart(this)"
+                  aria-label="Dodaj proizvod Jakna u korpu">
+                  Dodaj u korpu
+                </button>
+              </div>
+              <h3 class="h6 fw-semibold mb-1"><a href="../products/product-detailjakna.html" class="text-decoration-none text-dark">Jakna</a></h3>
+              <p class="small text-muted mb-0">6500 RSD</p>
             </div>
           </div>
 
