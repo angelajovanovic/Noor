@@ -151,3 +151,9 @@ transition: background-color 0.3s;
   min-height: 350px;
   background-color: #f8f9fa;
 }
+.blockquote-footer {
+  cite,
+  blocquote p {
+    color: #212529;
+  }
+}
