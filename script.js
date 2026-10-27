@@ -251,3 +251,57 @@ document.addEventListener('DOMContentLoaded', function () {
   updateCategoryCounts();
   applyFilters();
 });
+function renderCheckOutCart(){
+  const itemsContainer = document.getElementById('checkoutCartItems');
+  if (!itemsContainer) return;
+
+  const cart = getCart();
+  const deliveryEl = document.getElementById('checkoutDeliveryText');
+  const totalEl = document.getElementById('checkoutTotalPrice');
+
+  if(cart.length == 0) {
+    itemsContainer.innerHTML = '<p class="small text-muted mb-0">Vaša korpa je prazna.</p>';
+    if (deliveryEl) deliveryEl.textContent = '0 RSD';
+    if (totalEl) totalEl.textContent = '0 RSD';
+    return;
+  }
+
+  let subtotal = 0;
+  itemsContainer.innerHTML = cart
+  .map(item => {
+      const price = Number.parseInt(String(item.price).replace(/\D/g, ''), 10) || 0;
+      const quantity = Number.parseInt(item.quantity, 10) || 1;
+      const itemTotal = price * quantity;
+      subtotal += itemTotal;
+
+      return `
+        <div class="d-flex justify-content-between align-items-center mb-2 small">
+          <div>
+            <span class="fw-semibold">${item.title}</span> 
+            <span class="text-muted">(x${quantity})</span>
+            <div class="text-muted" style="font-size: 0.75rem;">Veličina: ${item.size}</div>
+          </div>
+          <span class="fw-semibold">${itemTotal.toLocaleString()} RSD</span>
+        </div>`;
+    })
+    .join('');
+
+    let deliveryCost = 0;
+    if (subtotal < 12000 & subtotal > 0) {
+      deliveryCost = 500;
+      if (deliveryEl) {
+        deliveryEl.textContent = '500 RSD';
+        deliveryEl.className = 'fw-semibold text-dark';
+      }
+    } else {
+      deliveryCost = 0;
+      if (deliveryEl) {
+        deliveryEl.textContent = 'Besplatna';
+        deliveryEl.className = 'fw-semibold text-success';
+      }
+    }
+    const grandTotal = subtotal + deliveryCost;
+    if (totalEl) totalEl.textContent = '${grandTotal.totalString()} RSD'
+}
+
+document.addEventListener('DOMContentLoaded', renderCheckOutCart);
