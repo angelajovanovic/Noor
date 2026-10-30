@@ -301,7 +301,10 @@ function renderCheckOutCart(){
       }
     }
     const grandTotal = subtotal + deliveryCost;
-    if (totalEl) totalEl.textContent = '${grandTotal.totalString()} RSD'
+    if (totalEl) {
+      totalEl.textContent = `${grandTotal.toLocaleString()} RSD`
+    }
+      
 }
 
 document.addEventListener('DOMContentLoaded', renderCheckOutCart);

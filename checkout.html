@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     
@@ -59,15 +60,14 @@
 </nav>
 <!-- Navbar End -->
 
-<main id="main-content" class="conteiner my-5 py-5">
+<main id="main-content" class="container my-5 py-5">
     <h1 class="fw-bold mb-4 text-center text-uppercase h2">Plaćanje i dostava</h1>
 
     <div class="row g-4 align-items-start">
-        <div class="col-lg-7">
             <div class="col-lg-7">
                 <div class="card border-o shadow-sm p-4 rounded-4">
                     <h2 class=" h5 fw-bold mb-4">Podaci za dostavu </h2>
-                    <form id="checkoutForn" onsubmit="event.preventDefault(); alert('Vaša porudzbina je uspesno kreirana!'); window.location.href='index.html';">
+                    <form id="checkoutForm" onsubmit="event.preventDefault(); alert('Vaša porudzbina je uspesno kreirana!'); window.location.href='index.html';">
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <label for="firstName" class="form-label small text-uppercase fw-semibold">Ime:</label>
@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-6">
                                 <label for="city" class="form-label small text-uppercase fw-semibold">Grad:</label>
-                                <input type="city" class="form-control rounded-3" id="city" required aria-required="true">
+                                <input type="text" class="form-control rounded-3" id="city" required aria-required="true">
                             </div>
                             <div class="col-6">
                                 <label for="zip" class="form-label small text-uppercase fw-semibold">Poštanski broj:</label>
@@ -131,8 +131,6 @@
                 </div>
 
             </div>
-
-        </div>
 
     </div>
 </main>
