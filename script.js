@@ -34,9 +34,8 @@ function addToCart(button) {
     price = document.querySelector('main .h4')?.textContent.trim();
     image = document.getElementById('mainProductImg')?.src || '';
 
-    size =
-      document.querySelector('input[name="size"]:checked')
-        ?.nextElementSibling?.textContent.trim() || 'ONE SIZE';
+    const activeSizeBtn = document.querySelector('.size-btn.active, .size-option.active, button.active');
+    size = activeSizeBtn ? activeSizeBtn.textContent.trim() : 'ONE SIZE';
 
     quantity =
       Number.parseInt(document.getElementById('quantityInput')?.value, 10) || 1;
