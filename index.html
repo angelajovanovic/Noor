@@ -63,7 +63,7 @@
 <section class="hero-section py-4">
   <div class="container-fluid px-2">
     <div class="hero-card position-relative d-flex align-items-center justify-content-center text-center text-white overflow-hidden rounded-4">
-      <!-- Pozadinska slika sa Alt opisom -->
+      <!-- Hero slika -->
       <img src="img/hero.png" alt="Žena sedi na drvenoj stolici u modernom enterijeru i nosi ležernu duksericu; fotografija ima miran, savremen ton i nema vidljivog teksta." class="hero-img position-absolute w-100 h-100 object-fit-cover">
       
       <!-- Tamni overlay radi čitljivosti teksta (Kontrast za accessibility) -->
@@ -81,15 +81,16 @@
   </div>
 </section>
 
-<!-- BRZI HIGHLIGHTS / KATEGORIJE -->
+<!-- Kategorije -->
 <section class="quick-categories py-4" aria-label="Istaknute informacije i pogodnosti">
   <div class="container">
     <div class="row g-3 justify-content-center text-center">
       
       <div class="col-6 col-md-3">
         <a href="about.html" class="text-decoration-none d-flex flex-column align-items-center">
-          <div class="circle-icon rounded-circle mb-2 overflow-hidden shadow-sm">
-            <img src="img/obrendu.png" alt="Informacije o brendu NOOR" class="w-100 h-100 object-fit-cover">
+          <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" 
+     style="width: 80px; height: 80px; background-color: #f3e8e8; border: 1px solid #ebdada;">
+            <img src="img/about.png" alt="Informacije o brendu NOOR" style="width: 50px; height: 50px; object-fit: contain; filter: sepia(100%) hue-rotate(300deg) saturate(150%) opacity(0.85);">
           </div>
           <span class="small fw-medium text-dark">O brendu</span>
         </a>
@@ -97,8 +98,9 @@
 
       <div class="col-6 col-md-3">
         <a href="contact.html" class="text-decoration-none d-flex flex-column align-items-center">
-          <div class="circle-icon rounded-circle mb-2 overflow-hidden shadow-sm">
-            <img src="https://plus.unsplash.com/premium_photo-1784181613811-2dee79412aed?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Besplatna i brza dostava" class="w-100 h-100 object-fit-cover">
+          <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm icon-hover" 
+               style="width: 80px; height: 80px; background-color: #f3e8e8; border: 1px solid #ebdada;">
+            <img src="img/transport.png" alt="Besplatna i brza dostava" style="width: 50px; height: 50px; object-fit: contain; filter: sepia(100%) hue-rotate(300deg) saturate(150%) opacity(0.85);">
           </div>
           <span class="small fw-medium text-dark">Dostava i plaćanje</span>
         </a>
@@ -106,8 +108,9 @@
 
       <div class="col-6 col-md-3">
         <a href="povracaj.html#kako-izvrsiti-povracaj" class="text-decoration-none d-flex flex-column align-items-center">
-          <div class="circle-icon rounded-circle mb-2 overflow-hidden shadow-sm">
-            <img src="img/cat-3.jpg" alt="Uslovi zamene i povrata robe" class="w-100 h-100 object-fit-cover">
+          <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" 
+     style="width: 80px; height: 80px; background-color: #f3e8e8; border: 1px solid #ebdada;">
+            <img src="img/refresh.png" alt="Uslovi zamene i povrata robe" style="width: 42px; height: 42px; object-fit: contain; filter: sepia(100%) hue-rotate(300deg) saturate(150%) opacity(0.85);">
           </div>
           <span class="small fw-medium text-dark">Zamena i povrat</span>
         </a>
@@ -115,8 +118,9 @@
 
       <div class="col-6 col-md-3">
         <a href="contact.html" class="text-decoration-none d-flex flex-column align-items-center">
-          <div class="circle-icon rounded-circle mb-2 overflow-hidden shadow-sm">
-            <img src="https://plus.unsplash.com/premium_photo-1689620817504-2f77cbddf142?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kontakt za saradnju" class="w-100 h-100 object-fit-cover">
+          <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" 
+     style="width: 80px; height: 80px; background-color: #f3e8e8; border: 1px solid #ebdada;">
+            <img src="img/touch.png" alt="Kontakt za saradnju" style="width: 50px; height: 50px; object-fit: contain; filter: sepia(100%) hue-rotate(300deg) saturate(150%) opacity(0.85);">
           </div>
           <span class="small fw-medium text-dark">Saradnja</span>
         </a>
@@ -126,11 +130,11 @@
   </div>
 </section>
 
-<!-- NEW DROP KOLEKCIJA (Grid sa karticama zaobljenih ivica) -->
+<!-- NEW DROP KOLEKCIJA  -->
 <section id="kolekcija" class="new-drop-section py-5" aria-label="Nova kolekcija proizvoda">
   <div class="container">
     
-    <!-- Naslov sekcije -->
+    
     <div class="text-center mb-5">
       <h2 class="h1 fw-bold text-uppercase tracking-wider mb-1">NEW DROP</h2>
       <p class="text-muted small text-uppercase">Najnoviji komadi u ponudi</p>
@@ -146,7 +150,7 @@
           <div class="product-info position-absolute bottom-0 start-0 w-100 p-3 text-white d-flex justify-content-between align-items-center">
             <span class="fw-bold text-uppercase">Džins</span>
             <a href="products/product-detailjeans.html" class="btn btn-sm btn-light rounded-circle p-2 d-flex align-items-center justify-content-center" aria-label="Pogledaj jakne">
-              <i class="bi bi-arrow-right-short fs-5" aria-hidden="true">&rarr;</i>
+              <i class="bi bi-arrow-right-short fs-5" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -159,7 +163,7 @@
           <div class="product-info position-absolute bottom-0 start-0 w-100 p-3 text-white d-flex justify-content-between align-items-center">
             <span class="fw-bold text-uppercase">Komplet trenerke</span>
             <a href="products/product-detailkomplet1.html" class="btn btn-sm btn-light rounded-circle p-2 d-flex align-items-center justify-content-center" aria-label="Pogledaj pantalone">
-              <i class="bi bi-arrow-right-short fs-5" aria-hidden="true">&rarr;</i>
+              <i class="bi bi-arrow-right-short fs-5" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -172,7 +176,7 @@
           <div class="product-info position-absolute bottom-0 start-0 w-100 p-3 text-white d-flex justify-content-between align-items-center">
             <span class="fw-bold text-uppercase">Jakne</span>
             <a href="products/product-detailjakna.html" class="btn btn-sm btn-light rounded-circle p-2 d-flex align-items-center justify-content-center" aria-label="Pogledaj aksesoare">
-              <i class="bi bi-arrow-right-short fs-5" aria-hidden="true">&rarr;</i>
+              <i class="bi bi-arrow-right-short fs-5" aria-hidden="true"></i>
             </a>
           </div>
         </div>

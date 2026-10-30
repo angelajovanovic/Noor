@@ -61,26 +61,26 @@
         <div class="col-md-5">
             <div class="card border-0 shadow-sm p-4 rounded-4">
                 <h2 class="text-center fw-bold mb-4">Prijava na nalog</h2>
-                <form>
+                <form onsubmit="event.preventDefault(); alert('Uspešno ste se prijavili na nalog!'); window.location.href='index.html';">
                 <div class="mb-3">
                     <label for="email" class="form-label small text-uppercase fw-semibold">E-mail adresa</label>
-                    <input type="email" class="form-control rounded-3" id="email" placeholder="Ovde unesite vas email!" required>
+                    <input type="email" class="form-control rounded-3" id="email" placeholder="Ovde unesite vas email!" required aria-required="true">
                 </div>
             <div class="mb-3">
               <label for="password" class="form-label small text-uppercase fw-semibold">Lozinka</label>
-              <input type="password" class="form-control rounded-3" id="password" placeholder="Unesite lozinku!" required>
+              <input type="password" class="form-control rounded-3" id="password" placeholder="Unesite lozinku!" required aria-required="true">
             </div>
             <div class="d-flex justify-content-between align-items-center mb-4">
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="remember">
                 <label class="form-check-label small" for="remember">Zapamti me</label>
               </div>
-              <a href="#" class="small text-muted text-decoration-underline">Zaboravili ste lozinku?</a>
+              <a href="#" class="small text-muted text-decoration-underline" onclick="event.preventDefault(); alert('Link za resetovanje lozinke je poslat na vaš e-mail.');">Zaboravili ste lozinku?</a>
             </div>
-            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 fw-semibold">Prijavi se</button>
+            <button type="submit" class="btn btn-dark w-100 rounded-pill py-2 fw-semibold" aria-label="Prijavite se na vaš nalog">Prijavi se</button>
           </form>
           <hr class="my-4">
-          <p class="text-center small mb-0">Nemate nalog? <a href="#" class="fw-bold text-dark text-decoration-none">Registrujte se</a></p>
+          <p class="text-center small mb-0">Nemate nalog? <a href="#" class="fw-bold text-dark text-decoration-none" onclick="event.preventDefault(); alert('Registracija je trenutno onemogućena u demo režimu.');">Registrujte se</a></p>
 
             </div>
         </div>
