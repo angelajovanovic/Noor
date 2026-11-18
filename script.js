@@ -68,8 +68,8 @@ function addToCart(button) {
   if (typeof renderCart === 'function') {
     renderCart();
   }
-
-  announce('Proizvod je dodat u korpu.');
+  showCartToast();
+  announce('Proizvod je uspešno dodat u korpu.');
 }
 
 function renderCart() {
@@ -226,17 +226,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  sizeBtns.forEach(button => {
-    button.addEventListener('click', () => {
-      activeSize = button.getAttribute('data-size') || 'all';
+ sizeBtns.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
 
       sizeBtns.forEach(item => {
-        const isActive = item === button;
-        item.classList.toggle('active', isActive);
-        item.setAttribute('aria-pressed', String(isActive));
+        item.classList.remove('active');
+        item.setAttribute('aria-pressed', 'false');
       });
 
-      applyFilters();
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+
+      activeSize = button.getAttribute('data-size') || button.textContent.trim();
+
+      if (typeof applyFilters === 'function') {
+        applyFilters();
+      }
+
+      button.focus();
+      announce(`Izabrana veličina ${activeSize}`);
     });
   });
 
@@ -307,3 +316,22 @@ function renderCheckOutCart(){
 }
 
 document.addEventListener('DOMContentLoaded', renderCheckOutCart);
+
+function showCartToast() {
+  const toast = document.getElementById('cartToast');
+  if (!toast) return;
+
+  toast.style.display = 'block';
+
+  // Baner se automatski gubi nakon 3.5 sekunde da ne smeta korisniku
+  setTimeout(() => {
+    hideCartToast();
+  }, 3500);
+}
+
+function hideCartToast() {
+  const toast = document.getElementById('cartToast');
+  if (toast) {
+    toast.style.display = 'none';
+  }
+}

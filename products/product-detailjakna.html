@@ -147,18 +147,15 @@
         
         <hr class="my-4">
 
-        <!-- ODABIR VELIČINE -->
-        <div class="mb-4">
+      <div class="mb-4">
           <label class="fw-semibold d-block mb-2 small text-uppercase">Veličina:</label>
-          <div class="d-flex gap-2">
-            <input type="radio" class="btn-check" name="size" id="sizeXS" autocomplete="off">
-            <label class="btn btn-outline-dark size-btn" for="sizeXS">XS</label>
-            <label class="btn btn-outline-dark size-btn" for="sizeS">S</label>
-            <label class="btn btn-outline-dark size-btn" for="sizeM">M</label>
-            <label class="btn btn-outline-dark size-btn" for="sizeL">L</label>
+          <div class="d-flex gap-2" aria-label="Izbor veličine">
+            <button type="button" class="btn btn-outline-dark size-btn active" aria-pressed="true" data-size="XS">XS</button>
+            <button type="button" class="btn btn-outline-dark size-btn" aria-pressed="false" data-size="S">S</button>
+            <button type="button" class="btn btn-outline-dark size-btn" aria-pressed="false" data-size="M">M</button>
+            <button type="button" class="btn btn-outline-dark size-btn" aria-pressed="false" data-size="L">L</button>
           </div>
         </div>
-
         <!-- ODABIR KOLIČINE I DUGME ZA KORPU -->
         <div class="mb-4">
           <label class="fw-semibold d-block mb-2 small text-uppercase">Količina:</label>
@@ -230,6 +227,18 @@
         </div>
     </div>
   </main>
+
+  <div id="cartToast" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080; display: none;">
+  <div class="toast show align-items-center text-white bg-dark border-0 shadow-lg rounded-pill px-3 py-2" role="alert" aria-live="polite" aria-atomic="true">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-check-circle-fill text-success fs-5 me-2" aria-hidden="true"></i>
+      <div class="toast-body fw-semibold py-1">
+        Proizvod je uspešno dodat u korpu!
+      </div>
+      <button type="button" class="btn-close btn-close-white ms-3 me-2" onclick="hideCartToast()" aria-label="Zatvori obaveštenje"></button>
+    </div>
+  </div>
+</div>
 
 <footer class="bg-light text-white pt-5 pb-4 mt-5">
   <div class="container">

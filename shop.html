@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,10 +31,10 @@
             <a class="nav-link mx-lg-2" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" href="shop.html" aria-label="Pregledajte vašu korpu">Kolekcija</a>
+            <a class="nav-link mx-lg-2" href="shop.html" aria-label="Posetite shop">Kolekcija</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link mx-lg-2" href="about.html" aria-label="Saznajte više o NOOR butiku">O nama</a>
+            <a class="nav-link mx-lg-2" href="about.html" aria-label="Saznajte više o butiku">O nama</a>
           </li>
           <li class="nav-item">
             <a class="nav-link mx-lg-2" href="contact.html" aria-label="Kontaktirajte NOOR tim">Kontakt</a>
@@ -429,6 +429,18 @@
 
     </div>
   </main>
+
+  <div id="cartToast" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080; display: none;">
+  <div class="toast show align-items-center text-white bg-dark border-0 shadow-lg rounded-pill px-3 py-2" role="alert" aria-live="polite" aria-atomic="true">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-check-circle-fill text-success fs-5 me-2" aria-hidden="true"></i>
+      <div class="toast-body fw-semibold py-1">
+        Proizvod je uspešno dodat u korpu!
+      </div>
+      <button type="button" class="btn-close btn-close-white ms-3 me-2" onclick="hideCartToast()" aria-label="Zatvori obaveštenje"></button>
+    </div>
+  </div>
+</div>
 
   <footer class="bg-light text-white pt-5 pb-4 mt-5">
   <div class="container">

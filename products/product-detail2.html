@@ -164,6 +164,18 @@
     </div>
   </main>
 
+  <div id="cartToast" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080; display: none;">
+  <div class="toast show align-items-center text-white bg-dark border-0 shadow-lg rounded-pill px-3 py-2" role="alert" aria-live="polite" aria-atomic="true">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-check-circle-fill text-success fs-5 me-2" aria-hidden="true"></i>
+      <div class="toast-body fw-semibold py-1">
+        Proizvod je uspešno dodat u korpu!
+      </div>
+      <button type="button" class="btn-close btn-close-white ms-3 me-2" onclick="hideCartToast()" aria-label="Zatvori obaveštenje"></button>
+    </div>
+  </div>
+</div>
+
   <footer class="bg-light text-white pt-5 pb-4 mt-5">
   <div class="container">
     <div class="row text-center text-md-start">
